@@ -1,7 +1,7 @@
 # CPBL 管理系統
 
 ## 本專案為使用 SpringMVC + Thymeleaf 製作的練習專案。使用 enbedded tomcat 部屬並啟動 Spring app 後使用 localhost:8080 開啟，需要 SQL server 內存在名為 cpbl 資料庫方可建立資料庫連線，SQL 登入帳號與密碼請自行至 application.properties 檔做修改。
-## 更詳細的規格書請參考 resources/static 內的 wrod 檔。
+## 更詳細的規格書請參考 resources/static 內的 word 檔。
 ## A. 資料來源
 CPBL Opendata [GitHub](https://github.com/ldkrsi/cpbl-opendata)
 
