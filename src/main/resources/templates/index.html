@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPBL Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #3a86ff;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #6c757d;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffbe0b;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .button-group {
+            margin-top: 30px;
+        }
+
+        .button-group a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3a86ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button-group a:hover {
+            background-color: #ff006e;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CPBL Management Dashboard</h1>
+    </header>
+    <nav>
+        <a href="/cpbl">Manage Data</a>
+        <a href="/display">View Results</a>
+    </nav>
+    <div class="container">
+        <h1>Welcome to CPBL Management System</h1>
+        <p>Use the navigation menu or the buttons below to proceed.</p>
+        <div class="button-group">
+            <a href="/cpbl">Manage CPBL Data</a>
+            <!-- <a href="/display">View Query Results</a> -->
+        </div>
+    </div>
+</body>
+
+</html>

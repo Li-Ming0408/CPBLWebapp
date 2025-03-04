@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Player Query Results</h3>
+
+    <p th:if="${count != null}" th:text="'Total results: ' + ${count}"></p>
+
+    <p th:if="${count == 0}" style="color: red;">No data found.</p>
+
+    <table th:if="${count > 0}">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Team Name</th>
+                <th>Season</th>
+                <th>G</th>
+                <th>PA</th>
+                <th>AB</th>
+                <th>RBI</th>
+                <th>H</th>
+                <th>HR</th>
+                <th>TB</th>
+                <th>SO</th>
+                <th>SF</th>
+                <th>BB</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="row : ${query}">
+                <td th:text="${row.name}"></td>
+                <td th:text="${row.teamName}"></td>
+                <td th:text="${row.season}"></td>
+                <td th:text="${row.g}"></td>
+                <td th:text="${row.pa}"></td>
+                <td th:text="${row.ab}"></td>
+                <td th:text="${row.rbi}"></td>
+                <td th:text="${row.h}"></td>
+                <td th:text="${row.hr}"></td>
+                <td th:text="${row.tb}"></td>
+                <td th:text="${row.so}"></td>
+                <td th:text="${row.sf}"></td>
+                <td th:text="${row.bb}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 返回按鈕 -->
+    <button onclick="window.location.href='/cpbl'">Back</button>
+</body>
+</html>

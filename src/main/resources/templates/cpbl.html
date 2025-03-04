@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPBL CRUD</title>
+<style>
+td {
+	margin: 5px;
+	padding: 3px;
+}
+</style>
+<script type="text/javascript">
+        function clearForm() {
+            var inputs = document.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "text") {
+                    inputs[i].value = "";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+	<h3>CPBL</h3>
+	<form action="/cpbl" method="post">
+		<table>
+			<tr>
+				<td>姓名(name)</td>
+				<td><input type="text" name="name"
+					th:value="${param['name'] ?: ''}"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>隊伍名稱(team name)</td>
+				<td><input type="text" name="teamName"
+					th:value="${param['teamName'] ?: ''}"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>球季(season)</td>
+				<td><input type="text" name="season"
+					th:value="${param['season'] ?: ''}"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>出賽場次(G)</td>
+				<td><input type="text" name="g" th:value="${param['g'] ?: ''}"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>打席(PA)</td>
+				<td><input type="text" name="pa" th:value="${param['g'] ?: ''}"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>打數(AB)</td>
+				<td><input type="text" name="ab"
+					th:value="${param['ab'] ?: ''}"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>打點(RBI)</td>
+				<td><input type="text" name="rbi"
+					th:value="${param['rbi'] ?: ''}"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>安打(H)</td>
+				<td><input type="text" name="h" th:value="${param['h'] ?: ''}"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>全壘打(HR)</td>
+				<td><input type="text" name="hr"
+					th:value="${param['hr'] ?: ''}"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>壘打數(TB)</td>
+				<td><input type="text" name="tb"
+					th:value="${param['tb'] ?: ''}"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>三振(SO)</td>
+				<td><input type="text" name="so"
+					th:value="${param['so'] ?: ''}"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>高飛犧牲(SF)</td>
+				<td><input type="text" name="sf"
+					th:value="${param['sf'] ?: ''}"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>保送(BB)</td>
+				<td><input type="text" name="bb"
+					th:value="${param['bb'] ?: ''}"></td>
+				<td></td>
+			</tr>
+
+		</table>
+		<table>
+			<tr>
+				<td><input type="submit" name="insert" value="新增"></td>
+				<td><input type="submit" name="update" value="修改"></td>
+				<td><input type="submit" name="delete" value="刪除"></td>
+				<td><input type="button" name="query" value="查詢"></td>
+				<td><input type="button" name="upload" value="上傳"></td>
+				<td><input type="button" value="清空" onclick="clearForm()">
+				</td>
+
+			</tr>
+		</table>
+	</form>
+	<div>
+        <h4>新增或修改結果</h4>
+        <p th:if="${insert}" th:text="'成功新增/修改: ' + ${insert}"></p>
+        <p th:if="${delete}" th:text="${delete}"></p>
+    </div>
+	
+</body>
+
+</html>
